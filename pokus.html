@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="cs-cz">
+        <head>
+                <meta charset="utf-8" />
+                <title>Prva web app v JS</title>
+                <link rel="shortcut icon" href="file:///Users/andrejatre/desktop/cat.png" />
+        </head>
+
+        <body>
+        <h1>Dobry den Andrej</h1>
+                <script type="text/javascript">
+                var Things = [];
+                var d = new Date();
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                // sometimes even the US needs 24-hour time
+				var	options2 = {	year: 'numeric', month: 'numeric', day: 'numeric',
+  								hour: 'numeric', minute: 'numeric', second: 'numeric',
+  								ur12: false}
+  				var	options3 = { weekday:'long', year: 'numeric', month: 'long', day: 'numeric',
+  								hour: 'numeric', minute: 'numeric', second: 'numeric',
+  								ur12: false}
+
+                for (var i = 0; i < 10; i++) {
+                	Things[i] = " i "+ i;
+                };
+                document.write("Ahoj Andrej! <br>");
+                for (var i = 0; i < Things.length; i++) {
+                document.write(	Things[i] +"  riadok cas : " +d.getDate() +"."+(d.getMonth()+1)+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+  "  <br>" );
+                document.write("toLocaleDateString()  " + d.toLocaleDateString("sk-sk",options) +" <br>");
+                
+                document.write("toLocaleDateString()  " + d.toLocaleDateString("sk-sk",options2) +" <br>");
+                document.write("toLocaleDateString()  " + d.toLocaleDateString("sk-sk",options3) +" <br>");
+                document.write("<br>");
+                document.write("<br>");
+                console.log(Things[i]);
+                
+                };
+                var input = prompt("zadaj niake cislo");
+                //alert(input);
+                confirm(input);
+function sym(args) {
+      var output;
+      output = [].slice.apply(arguments).reduce(function(previous, current) {
+        current.filter(function(value, index, self) { //for unique
+          return self.indexOf(value) === index;
+        }).map(function(element) { //pushing array
+          var loc = previous.indexOf(element);
+          a = [loc !== -1 ? previous.splice(loc, 1) : previous.push(element)];
+        });
+        return previous;
+      }, []);
+      console.log(output);
+      return output;
+    }
+
+    sym([1, 2, 3], [5, 2, 1, 4]);
+
+
+                </script>
+               <div class="picture">
+               	<img  style="width:600px" src="file:///Users/andrejatre/desktop/cat.png" alt="">
+               </div> 
+               
+               	
+
+               	
+        </body>
+</html>
